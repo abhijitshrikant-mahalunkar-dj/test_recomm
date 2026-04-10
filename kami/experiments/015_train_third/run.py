@@ -179,7 +179,6 @@ def train_and_valid(
         num_boost_round=cfg.exp.lgbm.num_boost_round,
         valid_sets=[lgb_valid_dataset],
         valid_names=["valid"],
-        categorical_feature=cfg.exp.lgbm.cat_cols,
         callbacks=[
             wandb_callback(),
             lgb.early_stopping(
@@ -244,7 +243,6 @@ def train_only(cfg: DictConfig, train_df: pl.DataFrame, iteration: int) -> lgb.B
         num_boost_round=iteration,
         valid_sets=[lgb_train_dataset],
         valid_names=["train"],
-        categorical_feature=cfg.exp.lgbm.cat_cols,
         callbacks=[
             lgb.log_evaluation(cfg.exp.lgbm.verbose_eval),
         ],
