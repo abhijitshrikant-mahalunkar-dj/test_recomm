@@ -189,7 +189,7 @@ def train_and_valid(
             lgb.log_evaluation(cfg.exp.lgbm.verbose_eval),
         ],
     )
-    log_summary(bst, save_model_checkpoint=True)
+    log_summary(bst, save_model_checkpoint=False)
     logger.info(
         f"best_itelation: {bst.best_iteration}, train: {bst.best_score['train']}, valid: {bst.best_score['valid']}"
     )
