@@ -28,7 +28,7 @@ from ebrec.evaluation import MultiprocessingMrrScore as MrrScore
 from ebrec.evaluation import MultiprocessingNdcgScore as NdcgScore
 from ebrec.utils._python import write_submission_file
 from utils.logger import get_logger
-from wandb.lightgbm import log_summary, wandb_callback
+from wandb.integration.lightgbm import log_summary, wandb_callback
 
 # ONNX export support
 try:
